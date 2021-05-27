@@ -4,8 +4,8 @@ Online Grocery Store (E-Commerce Application) with recommendation system
 # Requirements
 Python >= 3.6
 
-Other packages can be downloaded by executing below command
-pip install requirements.txt
+Other packages can be downloaded by executing the command
+$ pip install requirements.txt $
 
 # Database Connection
 To connect with the database rename the sample_config.ini file into config.ini file and add your MongoDB database credentials
