@@ -1,0 +1,55 @@
+{% extends "User/layout.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-xl-3 col-lg-3 mt-30">
+        {% include 'user/components/left-sidebar.html' %}
+    </div>
+    <div class="col-xl-9 col-lg-9">
+        <div class="row products-card">
+            {% for i in range(3) %}
+            <div class="col-xl-3 col-lg-3 col-md-6 col-xs-12">
+                <div class="card">
+                    <a href="{{ url_for('products', product='parle-platina-hide-seek-chocolate-chip-cookies-350-g') }}">
+                        <img src="{{ url_for('static', filename='images/categories/fruits and vegetables.jpg') }}" alt="" class="img-responsive">
+                        <div class="card-title pl-20 pr-20 pt-5">
+                            Parle Platina Hide & Seek Chocolate Chip Cookies 350 g
+                        </div>
+                        <div class="card-text pl-20 pr-20 pt-5">
+                            <i class="fas fa-rupee-sign"></i> 250
+                        </div>
+                    </a>
+                    <div class="pl-20 pr-20 mt-10">
+                        <button class="btn btn-cart btn-block">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!--Product Recommendations Based On Search History-->
+        <hr>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="h4"><strong>Inspired By Your Browsing History</strong></div>
+                <div class="recommend-products">
+                    {% include 'user/components/recommend-products.html' %}
+                </div>
+            </div>
+        </div>
+        <!--/Product Recommendations Based On Search History-->
+
+        <!--Product Recommendations Based On Search History-->
+        <hr>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="h4"><strong>Inspired By Your Purchase History</strong></div>
+                <div class="recommend-products">
+                    {% include 'user/components/recommend-products.html' %}
+                </div>
+            </div>
+        </div>
+        <!--/Product Recommendations Based On Search History-->
+
+    </div>
+</div>
+{% endblock %}

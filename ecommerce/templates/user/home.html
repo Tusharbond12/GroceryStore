@@ -1,0 +1,79 @@
+{% extends "User/layout.html" %}
+{% block content %}
+<!--Top Products-->
+<div class="container">
+    <section>
+        <!-- Trending Products -->
+        <div class="row">
+            <div class="col-xs-12 h2">
+                Popular Categories
+                <hr>
+            </div>
+        </div>
+        <!-- End Trending Products -->
+        <div class="row categories-card">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                <a href="{{ url_for('categories', category='fresh-fruits') }}">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='images/categories/fruits and vegetables.jpg') }}" alt="" class="img-responsive">
+                        <div class="card-text text-center pt-5">
+                            Fresh Fruits
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                <a href="{{ url_for('categories', category='fresh-fruits') }}">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='images/categories/dairy and bakery.jpg') }}" alt="" class="img-responsive">
+                        <div class="card-text text-center pt-5">
+                            Dairy & Bakery
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                <a href="{{ url_for('categories', category='fresh-fruits') }}">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='images/categories/snacks_and_branded_foods.png') }}" alt="" class="img-responsive">
+                        <div class="card-text text-center pt-5">
+                            Snacks
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!--End Top Products-->
+    <section class="mt-30">
+        <!-- Trending Products -->
+        <div class="row">
+            <div class="col-xs-12 h2">
+                Trending This week
+                <hr>
+            </div>
+        </div>
+        <div class="row products-card">
+            {% for i in range(8) %}
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                <div class="card">
+                    <a href="{{ url_for('products', product='parle-platina-hide-seek-chocolate-chip-cookies-350-g') }}">
+                        <img src="{{ url_for('static', filename='images/categories/fruits and vegetables.jpg') }}" alt="" class="img-responsive">
+                        <div class="card-title pl-20 pr-20 pt-5">
+                            Parle Platina Hide & Seek Chocolate Chip Cookies 350 g
+                        </div>
+                        <div class="card-text pl-20 pr-20 pt-5">
+                            <i class="fas fa-rupee-sign"></i> 250
+                        </div>
+                    </a>
+                    <div class="pl-20 pr-20 mt-10">
+                        <button class="btn btn-cart btn-block">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- End Trending Products -->
+    </section>
+</div>
+{% endblock %}

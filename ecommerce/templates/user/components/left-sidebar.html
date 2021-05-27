@@ -1,0 +1,121 @@
+<div class="category-listing mb-50">
+
+    <div class="single-listing">
+        <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow mb-40">
+            <div class="select-Categories">
+                <div class="small-tittle h4 mb-20">
+                    <h4>Availability</h4>
+                </div>
+                <label class="container">InStock Products
+                    <input type="checkbox" class='filter-checkbox'>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </aside>
+
+        <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow mb-40">
+            <div class="small-tittle h4">
+                <h4>Filter by Price</h4>
+            </div>
+            <div class="widgets_inner wrapper">
+                <div class="range-slider">
+                    <input type="text" class="js-range-slider" value="" />
+                </div>
+                <div class="form-inline text-center">
+                    <input type="text" class="js-input-from text-right" value="0" readonly/> To <input type="text" class="js-input-to" value="0" readonly/>
+                </div>
+            </div>
+        </aside>
+
+        <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow mb-40">
+            <div class="select-Categories">
+                <div class="small-tittle h4 mb-20">
+                    <h4>Categories</h4>
+                </div>
+                <label class="container">Mangoes
+                    <input type="checkbox" class='filter-checkbox'>
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Citrus Fruits
+                    <input type="checkbox" class='filter-checkbox' checked="">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Apples
+                    <input type="checkbox" class='filter-checkbox'>
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Banana
+                    <input type="checkbox" class='filter-checkbox'>
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Melons
+                    <input type="checkbox" class='filter-checkbox'>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </aside>
+        <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow mb-40">
+            <div class="select-Categories">
+                <div class="small-tittle h4 mb-20">
+                    <h4>Brands</h4>
+                </div>
+                <label class="container">Muffets & Tuffets
+                    <input type="checkbox" class='filter-checkbox'>
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Britannia
+                    <input type="checkbox" class='filter-checkbox'>
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Wibs
+                    <input type="checkbox" class='filter-checkbox'>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </aside>
+
+    </div>
+</div>
+
+<script>
+    (function() {
+    const parent = document.querySelector('.range-slider');
+
+    if (!parent) {
+        return;
+    }
+
+    const rangeS = parent.querySelectorAll('input[type="range"]'),
+          numberS = parent.querySelectorAll('input[type="number"]');
+
+    rangeS.forEach((el) => {
+        el.oninput = () => {
+            let slide1 = parseFloat(rangeS[0].value),
+                slide2 = parseFloat(rangeS[1].value);
+
+            if (slide1 > slide2) {
+                [slide1, slide2] = [slide2, slide1];
+            }
+
+            numberS[0].value = slide1;
+            numberS[1].value = slide2;
+        }
+    });
+
+    numberS.forEach((el) => {
+        el.oninput = () => {
+            let number1 = parseFloat(numberS[0].value),
+                number2 = parseFloat(numberS[1].value);
+
+            if (number1 > number2) {
+                let tmp = number1;
+                numberS[0].value = number2;
+                numberS[1].value = tmp;
+            }
+
+            rangeS[0].value = number1;
+            rangeS[1].value = number2;
+        }
+    });
+})();
+</script>

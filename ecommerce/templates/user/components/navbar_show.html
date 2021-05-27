@@ -1,0 +1,122 @@
+{% from "user/macros/nav-macro.html" import nav_link with context %}
+<nav class="navbar navbar-main navbar-default" role="navigation" style="opacity: 1;">
+  <div class="container">
+    <!-- Brand and toggle -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links,  -->
+    <div class="collapse navbar-collapse navbar-1" style="margin-top: 0px;">
+      <ul class="nav navbar-nav">
+        {{ nav_link('home', 'Home') }}
+
+<!--        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Home</a></li>-->
+
+        <li class="dropdown megaDropMenu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Shop <i class="fa fa-angle-down ml-5"></i></a>
+          <ul class="dropdown-menu row">
+            <li class="col-sm-3 col-xs-12">
+              <ul class="list-unstyled">
+                <li>Products Grid View</li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Sidebar Left</a></li>
+                <li><a href="#">Products Left</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-3 col-xs-12">
+              <ul class="list-unstyled">
+                <li>Products List View</li>
+                <li><a href="#"> Sidebar Left</a></li>
+                <li><a href="#">Products Left</a></li>
+                <li><a href="#">Products Sidebar</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-3 col-xs-12">
+              <ul class="list-unstyled">
+                <li>Checkout</li>
+                <li><a href="#">Step 1</a></li>
+                <li><a href="#">Step 2</a></li>
+                <li><a href="#">Step 3</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-3 col-xs-12">
+              <img src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg" class="img-responsive" alt="menu-img">
+            </li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Page <i class="fa fa-angle-down ml-5"></i></a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Register or Login</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Password Recovery</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">404 Not Found</a></li>
+            <li><a href="#">Short Code</a></li>
+            <li><a href="#">Coming Soon</a></li>
+          </ul>
+        </li>
+        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Blog</a></li>
+        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">My List</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div>
+</nav>
+<script type="text/javascript">
+    ! function($, n, e) {
+      var o = $();
+      $.fn.dropdownHover = function(e) {
+        return "ontouchstart" in document ? this : (o = o.add(this.parent()), this.each(function() {
+          function t(e) {
+            o.find(":focus").blur(), h.instantlyCloseOthers === !0 && o.removeClass("open"), n.clearTimeout(c), i.addClass("open"), r.trigger(a)
+          }
+          var r = $(this),
+            i = r.parent(),
+            d = {
+              delay: 100,
+              instantlyCloseOthers: !0
+            },
+            s = {
+              delay: $(this).data("delay"),
+              instantlyCloseOthers: $(this).data("close-others")
+            },
+            a = "show.bs.dropdown",
+            u = "hide.bs.dropdown",
+            h = $.extend(!0, {}, d, e, s),
+            c;
+          i.hover(function(n) {
+            return i.hasClass("open") || r.is(n.target) ? void t(n) : !0
+          }, function() {
+            c = n.setTimeout(function() {
+              i.removeClass("open"), r.trigger(u)
+            }, h.delay)
+          }), r.hover(function(n) {
+            return i.hasClass("open") || i.is(n.target) ? void t(n) : !0
+          }), i.find(".dropdown-submenu").each(function() {
+            var e = $(this),
+              o;
+            e.hover(function() {
+              n.clearTimeout(o), e.children(".dropdown-menu").show(), e.siblings().children(".dropdown-menu").hide()
+            }, function() {
+              var t = e.children(".dropdown-menu");
+              o = n.setTimeout(function() {
+                t.hide()
+              }, h.delay)
+            })
+          })
+        }))
+      }, $(document).ready(function() {
+        $('[data-hover="dropdown"]').dropdownHover()
+      })
+    }(jQuery, this);
+  </script>

@@ -1,0 +1,93 @@
+<nav class="navbar navbar-main navbar-default" role="navigation" style="opacity: 1;">
+  <div class="container">
+    <!-- Brand and toggle -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links,  -->
+    <div class="collapse navbar-collapse navbar-1" style="margin-top: 0px;">
+      <ul class="nav navbar-nav">
+        <li><a href="{{ url_for('home') }}" data-hover="dropdown" data-close-others="false">Home</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Fruits & Vegetables <i class="fa fa-angle-down ml-5"></i></a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a href="{{ url_for('categories', category='fresh-fruits') }}" class="nav-hover">Fresh Fruits</a></li>
+            <li><a href="{{ url_for('categories', category='fresh-vegetables') }}" class="nav-hover">Fresh Vegetables</a></li>
+            <li><a href="{{ url_for('categories', category='herbs-seasonings') }}" class="nav-hover">Herbs & Seasonings</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Dairy & Bakery <i class="fa fa-angle-down ml-5"></i></a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a href="{{ url_for('categories', category='dairy') }}" class="nav-hover">Dairy</a></li>
+            <li><a href="{{ url_for('categories', category='bread-buns') }}" class="nav-hover">Bread & Buns</a></li>
+            <li><a href="{{ url_for('categories', category='cheese') }}" class="nav-hover">Cheese</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Snacks <i class="fa fa-angle-down ml-5"></i></a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a href="{{ url_for('categories', category='biscuits-cookies') }}" class="nav-hover">Biscuits & Cookies</a></li>
+            <li><a href="{{ url_for('categories', category='namkeens') }}" class="nav-hover">Namkeens</a></li>
+            <li><a href="{{ url_for('categories', category='chocolates') }}" class="nav-hover">Chocolates</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div>
+</nav>
+<script type="text/javascript">
+    ! function($, n, e) {
+      var o = $();
+      $.fn.dropdownHover = function(e) {
+        return "ontouchstart" in document ? this : (o = o.add(this.parent()), this.each(function() {
+          function t(e) {
+            o.find(":focus").blur(), h.instantlyCloseOthers === !0 && o.removeClass("open"), n.clearTimeout(c), i.addClass("open"), r.trigger(a)
+          }
+          var r = $(this),
+            i = r.parent(),
+            d = {
+              delay: 100,
+              instantlyCloseOthers: !0
+            },
+            s = {
+              delay: $(this).data("delay"),
+              instantlyCloseOthers: $(this).data("close-others")
+            },
+            a = "show.bs.dropdown",
+            u = "hide.bs.dropdown",
+            h = $.extend(!0, {}, d, e, s),
+            c;
+          i.hover(function(n) {
+            return i.hasClass("open") || r.is(n.target) ? void t(n) : !0
+          }, function() {
+            c = n.setTimeout(function() {
+              i.removeClass("open"), r.trigger(u)
+            }, h.delay)
+          }), r.hover(function(n) {
+            return i.hasClass("open") || i.is(n.target) ? void t(n) : !0
+          }), i.find(".dropdown-submenu").each(function() {
+            var e = $(this),
+              o;
+            e.hover(function() {
+              n.clearTimeout(o), e.children(".dropdown-menu").show(), e.siblings().children(".dropdown-menu").hide()
+            }, function() {
+              var t = e.children(".dropdown-menu");
+              o = n.setTimeout(function() {
+                t.hide()
+              }, h.delay)
+            })
+          })
+        }))
+      }, $(document).ready(function() {
+        $('[data-hover="dropdown"]').dropdownHover()
+      })
+    }(jQuery, this);
+  </script>

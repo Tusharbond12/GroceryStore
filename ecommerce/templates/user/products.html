@@ -1,0 +1,202 @@
+{% extends "User/layout.html" %}
+{% block content %}
+<div class="row mt-10">
+  <div class="col-xl-4 col-lg-4 col-md-6 col-xs-12">
+    <div class="row">
+      <div class="col-xs-12">
+        <img src="{{ url_for('static', filename='images/categories/fruits and vegetables.jpg') }}" alt="" class="img-responsive">
+      </div>
+    </div>
+    <div class="row">
+      {% for i in range(4) %}
+        <div class="img-thumb">
+          <div class="box-shadow">
+            <img src="{{ url_for('static', filename='images/categories/fruits and vegetables.jpg') }}" alt="" class="img-responsive">
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="col-xl-8 col-lg-8 col-md-6 col-xs-12 product-data">
+    <div class="product-name h3">Product Name</div>
+    <div class="product-price mt-10">
+      <span>M.R.P: <i class="fas fa-rupee-sign"></i> <strong>250</strong></span>
+      <span>(Inclusive of all taxes)</span>
+    </div>
+    <div class="text-success mt-10"><strong>In Stock</strong></div>
+<!--    <div class="text-danger mt-10"><strong>Out Of Stock</strong></div>-->
+    <div class="mt-10 strong">Sold By <span class="retailer-name">Reliance Retailer</span></div>
+
+    <div>
+      <button class="btn btn-cart btn-block">Add To Cart</button>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="h4 lnh-50"><strong>Description</strong></div>
+    <div class="product-description">
+      <h5><strong>Sweet Potato 500 g</strong></h5>
+      Potato is a root vegetable and the most versatile of all. It is widely used across Indian kitchens paired with numerous other vegetables for preparation of several delicacies. Be it Brinjal, Cauliflower, Tomato, Onion or be it Soyabean Chunks or the Spinach clan- Potatoes goes with all for delicious cuisines. Potatoes are rich in Carbohydrates, Dietary Fiber, Calcium and Iron. Buy Sweet Potato online now.
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="h4 lnh-50"><strong>Features And Details</strong></div>
+    <div class="product-description">
+      <ul>
+        <li>Feature 1</li>
+        <li>Feature 2</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="h4 lnh-50"><strong>Product Information</strong></div>
+    <div class="product-description table-responsive table-bordered table-stripped">
+      <table class="table">
+        <tr>
+          <th>Country of Origin</th>
+          <td>India</td>
+        </tr>
+        <tr>
+          <th>Product Type</th>
+          <td>
+            <div class="veg-icon"><div class="veg-circle"></div></div>
+<!--            <div class="non-veg-icon"><div class="non-veg-circle"></div></div>-->
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="h4 lnh-50"><strong>Disclaimer</strong></div>
+    <div class="product-description">
+      Despite our attempts to provide you with the most accurate information possible, the actual packaging, ingredients and colour of the product may sometimes vary. Please read the label, directions and warnings carefully before use.
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-lg-4 col-xl-4 col-md-5 col-xs-12">
+    <div class="h4 lnh-50"><strong>Product Rating</strong></div>
+    <div class="product-ratings right-bordered">
+      <div class="row">
+        <div class="col-xs-4 col-xs-offset-1 text-center">
+          <div><span class="text-lg">0</span><span class="text-md"> / 5</span></div>
+          <div>
+            {% for i in range(5) %}
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            {% endfor %}
+          </div>
+          <div class="text-small">Based on 0 Ratings</div>
+        </div>
+        <div class="col-xs-6 text-small strong">
+          {% for i in range(5,0, -1) %}
+          <div>
+            <div class="star-bar">
+              {{ i }} <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <div class="progress-bar">
+              <div id="myProgress_{{i}}" class="myProgress">
+                <div id="myBar_{{i}}" class="myBar" data-progress="{{ i*10 }}"></div>
+              </div>
+            </div>
+            <div class="percentage-bar"> {{ i*10 }}% </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="row mt-10 pad-20">
+        <div class="col-xs-6 mt-10 text-md">
+          Rate Product
+        </div>
+        <div class="col-xs-6 text-right text-lg">
+          {% for i in range(5) %}
+          <i class="fa fa-star-o" aria-hidden="true"></i>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="row sp-20">
+        <div class="col-xs-12">
+          <button class="btn btn-full btn-theme">WRITE REVIEW</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8 col-xl-8 col-md-7 col-xs-12">
+    <div class="h4 lnh-50"><strong>Product Review</strong></div>
+    <div class="product-reviews">
+      <div class="row">
+        <div class="col-xs-12 user-detail">
+          <div class="user-img pull-left">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <div class="user-name pull-left">User Name</div>
+        </div>
+        <div class="col-xs-12 user-ratings mt-5">
+          <span class="user-stars">
+            {% for i in range(5) %}
+              <i class="fas fa-star"></i>
+            {% endfor %}
+          </span>
+          <span class="user-subject strong ml-5">
+            Excellent choice of Portable AC for rented house
+          </span>
+        </div>
+        <div class="col-xs-12 user-review-info mt-5">
+          Reviewed in India on 7 March 2020
+        </div>
+        <div class="col-xs-12 user-review mt-5">
+          Come on guys , you really think an AC can work like a cooler and can be moved here and there just as you wish?
+
+          Cooler sprays water droplets to bring the temperature a bit down.
+
+          AC compresses the hot air and cools it and whichever hot air is remaining needs to go outside the house. If you let it stay inside your room then you won't feel the difference .
+          You can bring the temperature down to 16degrees with ac but with cooler maybe 2 or 3 degrees less than normal room temperature. Understand this difference before buying one.
+
+          For me I like this portable AC very much because unlike conventional AC where you have to fix it on wall and can cause difficulty while moving out of your rented house , this portable AC can be placed on ground and exhaust pipe can be fixed to a window with plastic hooks. It's much for convenient . So while you are switching your rented house you just have to untie your plastic hook for outlet pipe and take it to new locayion. This is called portability.
+
+          Some people posts negative comment just because they don't understand how things work.
+
+          I can assure you that after 1.5years if use.. this products works like charm
+
+          As you can see from pictures attached, I did my own jugaad modification to fit it in winfow so it was a easy solution and perfect one too.
+
+          Pros :
+          - Works efficiently and cools the room down
+          - Less Noise
+          - Easy to fix and remove while switching house.
+
+          Cons :
+          - Outlet pipe needs to be more flexible to fix it into all window grill shapes.
+          - Some people don't know how to fix the outlet pipe onto their windows so a video tutorial of this product will be a very helpful thing.
+          - Normal ac service guys have no clue how to clean dust from this product. So they reject the requests. Maybe update the authorised service centers details in this page will help .
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script>
+  $(function(){
+    $('.myBar').each(index => {
+      progress = $('#myBar_'+(index+1)).data('progress')
+      $('#myBar_'+(index+1)).width(progress+'%')
+    })
+  })
+</script>
+{% endblock %}
