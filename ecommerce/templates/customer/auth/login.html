@@ -1,4 +1,4 @@
-{% extends "User/layout.html" %}
+{% extends "customer/layout.html" %}
 {% block content %}
 <div class="row mt-30">
   <div class="col-md-5 col-md-offset-4 col-xs-12 center mx-auto">
@@ -48,5 +48,5 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-<script src="{{ url_for('static', filename='user/js/validation.js') }}"></script>
+<script src="{{ url_for('static', filename='customer/js/validation.js') }}"></script>
 {% endblock %}

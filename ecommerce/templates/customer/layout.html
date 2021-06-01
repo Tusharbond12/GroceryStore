@@ -10,8 +10,8 @@
         <!-- Animate CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-<!--        <link href="{{ url_for('static', filename='user/css/theme.css') }}" rel="stylesheet" type="text/css">-->
-        <link href="{{ url_for('static', filename='user/css/style.css') }}" rel="stylesheet" type="text/css">
+<!--        <link href="{{ url_for('static', filename='customer/css/theme.css') }}" rel="stylesheet" type="text/css">-->
+        <link href="{{ url_for('static', filename='customer/css/style.css') }}" rel="stylesheet" type="text/css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/f174e13019.js" crossorigin="anonymous"></script>
@@ -25,12 +25,12 @@
     </head>
     <body>
         <header>
-            {% include 'user/components/header.html' %}
+            {% include 'customer/components/header.html' %}
         </header>
         <!--Page Header / Slider-->
         {% if showCarousel %}
         <section>
-            {% include 'user/components/carousel.html' %}
+            {% include 'customer/components/carousel.html' %}
         </section>
         {% endif %}
         {% if showPageBanner %}
@@ -47,15 +47,15 @@
         {% if showCarousel %}
             <!--Support Start-->
             <section style="background: #eee">
-                {% include 'user/components/service-support.html' %}
+                {% include 'customer/components/service-support.html' %}
             </section>
             <!-- END Support-->
         {% endif %}
         <footer class="footer-bs">
-            {% include 'user/components/footer.html' %}
+            {% include 'customer/components/footer.html' %}
         </footer>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="{{ url_for('static', filename='user/js/price-slider.js') }}"></script>
+        <script src="{{ url_for('static', filename='customer/js/price-slider.js') }}"></script>
     </body>
 </html>

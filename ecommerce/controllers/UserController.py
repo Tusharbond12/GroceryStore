@@ -1,5 +1,5 @@
 from ecommerce.controllers import Controller
-from ecommerce.databases.models.user import User
+from ecommerce.databases.models.customer import User
 
 class UserController(Controller):
     def __init__(self):
