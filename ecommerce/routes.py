@@ -19,12 +19,12 @@ def contact():
 
 @app.route('/login')
 def login():
-    return render_template('user/login.html', title='Login')
+    return render_template('user/auth/login.html', title='Login')
 
 
 @app.route('/register')
 def register():
-    return render_template('user/register.html', title='Registration')
+    return render_template('user/auth/registration.html', title='Registration')
 
 
 @app.route('/categories/<category>')
