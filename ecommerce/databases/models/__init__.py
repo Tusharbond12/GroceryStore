@@ -17,7 +17,7 @@ class Model(DBConnection):
         :return: data add response
         """
         try:
-            return self.collection.insert_one(data)
+            return list(self.collection.insert_one(data))
         except Exception as e:
             self.log("Error: "+str(e))
 
@@ -28,7 +28,7 @@ class Model(DBConnection):
         :return: data add response
         """
         try:
-            return self.collection.insert_many(data)
+            return list(self.collection.insert_many(data))
         except Exception as e:
             self.log("Error: "+str(e))
 
@@ -46,21 +46,27 @@ class Model(DBConnection):
         except Exception as e:
             self.log("Error: "+str(e))
 
+    def aggregate(self, cond: list):
+        try:
+            return list(self.collection.aggregate(cond))
+        except Exception as e:
+            self.log("Error: "+str(e))
+
     def query(self, query: dict = {}):
         try:
-            return self.collection.find(query)
+            return list(self.collection.find(query))
         except Exception as e:
             self.log("Error: "+str(e))
 
     def delete(self, query: dict = {}):
         try:
-            return self.collection.delete_one(query)
+            return list(self.collection.delete_one(query))
         except Exception as e:
             self.log("Error: "+str(e))
 
     def delete_many(self, query: dict = {}):
         try:
-            return self.collection.delete_many(query)
+            return list(self.collection.delete_many(query))
         except Exception as e:
             self.log("Error: "+str(e))
 

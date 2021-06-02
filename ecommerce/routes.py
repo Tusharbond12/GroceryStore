@@ -1,10 +1,12 @@
 from ecommerce import app
 from flask import render_template
-
+from ecommerce.controllers.customer_controller import CustomerController
+from ecommerce.controllers.category_controller import CategoryController
 
 @app.route('/')
 def home():
-    return render_template('customer/home.html', showCarousel=True)
+    top_3_categories = CategoryController().top_3_categories()
+    return render_template('customer/home.html', showCarousel=True, response={'top_3_categories': top_3_categories})
 
 
 @app.route('/about-us')

@@ -12,36 +12,18 @@
         </div>
         <!-- End Trending Products -->
         <div class="row categories-card">
+            {% for category in response.top_3_categories %}
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                 <a href="{{ url_for('categories', category='fresh-fruits') }}">
                     <div class="card">
                         <img src="{{ url_for('static', filename='images/categories/fruits and vegetables.jpg') }}" alt="" class="img-responsive">
                         <div class="card-text text-center pt-5">
-                            Fresh Fruits
+                            {{ category.product_category_name }}
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                <a href="{{ url_for('categories', category='fresh-fruits') }}">
-                    <div class="card">
-                        <img src="{{ url_for('static', filename='images/categories/dairy and bakery.jpg') }}" alt="" class="img-responsive">
-                        <div class="card-text text-center pt-5">
-                            Dairy & Bakery
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                <a href="{{ url_for('categories', category='fresh-fruits') }}">
-                    <div class="card">
-                        <img src="{{ url_for('static', filename='images/categories/snacks_and_branded_foods.png') }}" alt="" class="img-responsive">
-                        <div class="card-text text-center pt-5">
-                            Snacks
-                        </div>
-                    </div>
-                </a>
-            </div>
+            {% endfor %}
         </div>
     </section>
     <!--End Top Products-->
