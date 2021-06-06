@@ -1,5 +1,7 @@
 from ecommerce import app
-from flask import render_template
+from flask import render_template ,request
+from ecommerce.controllers.order_controller import OrderController
+
 from ecommerce.controllers.customer_controller import CustomerController
 from ecommerce.controllers.category_controller import CategoryController
 
@@ -46,8 +48,25 @@ def cart():
 
 @app.route('/checkout')
 def checkout():
-    return render_template('customer/checkout.html', title='Checkout')
+    """
+          It would pass data (Dictionay Format) coming from cart menu to order controller
+          to update data in the Order table and Order Items table , data would be of format decided by person
+          doing product functionality , just need to un comment  the function
+     """
+    # OrderController().Update_data(data)
+    #Dummy data
+    return render_template('customer/checkout.html', title='Checkout' )
 
+@app.route('/billing')
+def billing():
+    """
+          It would pass data (Dictionay Format) coming from cart menu to order controller
+          to update data in the Order table and Order Items table , data would be of format decided by person
+          doing product functionality , just need to un comment  the function
+     """
+    # OrderController().Update_data(data)
+    #Dummy data
+    return render_template('checkout.html', title='Checkout' )
 
 @app.route('/search')
 def search():
